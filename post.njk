@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Market Insights | Michael's Investment Club
+description: Michael's posts on markets, economics, investing, and financial literacy.
+permalink: /insights/index.html
+---
+<div class="container">
+  <section>
+    <div class="eyebrow">Michael's Writing</div>
+    <h1 style="font-size:clamp(2.5rem,5vw,4.5rem);color:var(--navy)">Market Insights</h1>
+    <p class="lead">Short observations on investing, companies, economic developments, and financial literacy.</p>
+    <div class="post-grid">
+    {% for post in collections.posts | reverse %}
+      <a class="post-card" href="{{ post.url }}">
+        <div class="post-meta">{{ post.date | readableDate }}</div>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.summary }}</p>
+      </a>
+    {% endfor %}
+    </div>
+  </section>
+</div>
